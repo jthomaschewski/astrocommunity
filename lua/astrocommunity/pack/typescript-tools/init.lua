@@ -93,6 +93,9 @@ return {
       "javascript",
       "javascriptreact",
     },
+    init = function()
+      astronvim.lsp.skip_setup = utils.list_insert_unique(astronvim.lsp.skip_setup, "tsserver")
+    end,
     opts = {
       on_attach = function(client)
         client.server_capabilities.documentFormattingProvider = false
